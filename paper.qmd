@@ -1,0 +1,91 @@
+---
+title: "Quarto Template"
+author1: "Mauricio Vargas Sepúlveda"
+email1: m.sepulveda@mail.utoronto.ca
+orcid1: 0000-0003-1017-7574
+department1: Department of Political Science and Munk School of Global Affairs
+  and Public Policy
+organization1: University of Toronto
+street1: 1 Devonshire Place
+postcode1: M5S 3K7
+state1: Toronto, Ontario
+country1: Canada
+received: Pending
+revised: Pending
+accepted: Pending
+artid: Pending
+jyear: 2025
+jmonth: 01
+jvol: Pending
+jissue: Pending
+keywords: "Template; Quarto; LaTeX; R"
+abstract: "This is a template for users that create their plots/tables with R
+  and would like to avoid copying and pasting results into LaTeX."
+policy: "To be determined. Write policy relevant articles using R and Quarto."
+acknowledgements: "Quarto is very convenient to write scientific documents."
+competinginterests: "The author declares no competing interests."
+dataavailability: "Template fully available here: https://github.com/pachadotdev/data-and-policy-quarto-template"
+ethics: "This template did not involve undue access to data or any other
+  ethical concerns."
+contributions: "Mauricio Vargas Sepúlveda downloaded the official CUP template
+  and adapted it for Data & Policy."
+format:
+  pdf:
+    pdf-engine: pdflatex
+    template: "latex/template.tex"
+    keep-tex: true
+    post-process: "move_pdf.sh"
+bibliography: "latex/references.bib"
+fontsize: 12pt
+linespacing: 1.5
+margin: 1
+paper: letterpaper
+customfonts: false
+sansserif: false
+amsthm: false
+outline: true
+---
+
+# Introduction
+
+Write your introduction here. This template uses @posit_pbc_quarto_2025.
+
+Consider the following table:
+
+```{r intro1, echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+
+mtcars2 <- mtcars %>%
+  group_by(cyl) %>%
+  summarise(
+    mean_mpg = mean(mpg),
+    mean_hp = mean(hp)
+  )
+
+knitr::kable(mtcars2,
+  col.names = c("Cylinders", "Mean MPG", "Mean HP"),
+  format.args = list(big.mark = ","),
+  caption = "Average miles per gallon and horse power for the mtcars dataset."
+)
+```
+
+Also consider this image
+```{r intro2, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Normal distribution from Wikipedia", fig.align="center"}
+knitr::include_graphics("images/Normal_Distribution_PDF.png")
+```
+
+# Content
+
+Write it here.
+
+# Access to source code and data
+
+Any interested user can explore the source code on
+[GitHub](https://github.com/pachadotdev/data-and-policy-quarto-template) and
+propose improvements to the template.
+
+# Conclusion
+
+I hope it's useful.
+
+# References
