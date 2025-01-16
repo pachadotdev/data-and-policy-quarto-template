@@ -70,8 +70,19 @@ knitr::kable(mtcars2,
 ```
 
 Also consider this image
-```{r intro2, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Normal distribution from Wikipedia", fig.align="center"}
+```{r intro2, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Normal distribution from Wikipedia", fig.align="center", out.width="50%"}
 knitr::include_graphics("images/Normal_Distribution_PDF.png")
+```
+
+And this R plot
+```{r intro3, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Using ggplot", fig.align="center", out.width="50%"}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = mpg, y = hp)) +
+  geom_point() +
+  labs(title = "Scatter plot of miles per gallon and horse power",
+       x = "Miles per gallon",
+       y = "Horse power")
 ```
 
 # Content
