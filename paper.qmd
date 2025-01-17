@@ -29,6 +29,7 @@ ethics: "This template did not involve undue access to data or any other
   ethical concerns."
 contributions: "Mauricio Vargas Sepúlveda downloaded the official CUP template
   and adapted it for Data & Policy."
+fundingstatement: "Add funding information here."
 format:
   pdf:
     pdf-engine: pdflatex
